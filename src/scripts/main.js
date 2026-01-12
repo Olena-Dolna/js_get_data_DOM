@@ -5,15 +5,7 @@ const populationNodes = document.querySelectorAll('.population');
 let total = 0;
 
 for (const populationNode of populationNodes) {
-  let population = '';
-
-  for (const symbol of populationNode.textContent) {
-    if (symbol === ',') {
-      continue;
-    }
-
-    population += symbol;
-  }
+  const population = populationNode.textContent.replaceAll(',', '');
 
   total += +population;
 }
